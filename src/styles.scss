@@ -1,5 +1,11 @@
 @import url("./fonts.scss");
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   --dark-color: #000000;
   --light-color: #FFFFFF;
@@ -64,6 +70,7 @@ table {
 .skill-tag {
   display: inline;
   font-weight: 700;
+  height: 24px;
   font-size: 12px;
   padding: 4px 8px;
   border-radius: 4px;
