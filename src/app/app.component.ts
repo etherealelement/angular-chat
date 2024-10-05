@@ -1,25 +1,16 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ProfileCardComponent } from './common-ui/profile-card/profile-card.component';
-import { ProfileService } from './data/services/profile.service';
 import { CommonModule } from '@angular/common';
-import { IProfile } from './data/interfaces/profile';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProfileCardComponent, CommonModule],
+  imports: [RouterOutlet, CommonModule, LoginPageComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'angular-chat';
-  profileService = inject(ProfileService);
-  profiles: IProfile[] = [];
-
-  constructor() {
-    this.profileService.getTestAccounts().subscribe((profiles) => {
-      this.profiles = profiles;
-    });
-  }
+  constructor() {}
 }
