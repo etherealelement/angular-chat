@@ -1,0 +1,4 @@
+<ngcontainer [ngSwitch]="type" class="button-container">
+  <button *ngSwitchCase="'primary'" [ngClass]="buttonClasses" class="button primary">{{text}}</button>
+  <button *ngSwitchCase="'secondary'" [ngClass]="buttonClasses" class="button secondary">{{text}}</button>
+</ngcontainer>
