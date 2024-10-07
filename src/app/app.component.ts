@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { AuthComponent } from './modules/auth/ui/auth.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, LoginPageComponent],
+  imports: [RouterOutlet, CommonModule, AuthComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

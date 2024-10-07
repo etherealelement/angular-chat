@@ -1,0 +1,36 @@
+:host {
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  height: 100vh;
+  align-items: center;
+  margin: 0 5%;
+
+  .control-group {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .control-label {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+
+    input {
+      width: 100%;
+      margin-top: 8px;
+      display: block;
+      border: 1px solid var(--light-color);
+      border-radius: 4px;
+      padding: 12px 20px;
+      background: var(--dark-color);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      font-family: "JetBrains Mono", monospace;
+      color: var(--light-color)
+    }
+  }
+}
