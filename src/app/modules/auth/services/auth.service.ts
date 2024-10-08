@@ -1,4 +1,4 @@
-import { inject, Injectable } from '@angular/core';
+import {inject, Injectable, signal} from '@angular/core';
 import { HttpClient, HttpHandlerFn, HttpInterceptorFn, HttpRequest, HttpErrorResponse } from '@angular/common/http';
 import { LoginAuthPayload, LoginAuthResponse } from '../interfaces/auth';
 import { Router } from '@angular/router';
@@ -66,6 +66,8 @@ export class AuthService {
   token: string | null = null;
   refreshToken: string | null = null;
 
+  errorText = signal<string | null >(null)
+
   get isAuth(): boolean {
     if (!this.token) {
       this.token = this.cookieService.get('token');
@@ -90,8 +92,10 @@ export class AuthService {
         this.router.navigate(['/']);
         this.cookieService.set('token', this.token);
         this.cookieService.set('refreshToken', this.refreshToken);
+        this.errorText.set(null);
       },
       error: (error: any) => {
+        this.errorText.set(error.error.detail || 'Что-то пошло не так');
         console.log(error);
       }
     });
