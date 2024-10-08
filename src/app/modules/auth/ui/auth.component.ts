@@ -1,10 +1,9 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import { HeadingComponent } from '../../../shared/ui-kit/heading/heading.component';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../../../shared/ui-kit/button/button.component';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {AuthService} from '../services/auth.service';
-import {from, map} from 'rxjs';
 import {Router} from '@angular/router';
 
 @Component({
@@ -16,12 +15,21 @@ import {Router} from '@angular/router';
 })
 export class AuthComponent {
   authService = inject(AuthService)
-  router = inject(Router)
+
+
+  errorText = this.authService.errorText
+  isPasswordVisible = signal<boolean>(false);
 
   form = new FormGroup({
     username: new FormControl<string | null>(null, Validators.required),
     password: new FormControl<string | null>(null, Validators.required),
   });
+
+  ngOnInit() {
+    this.form.valueChanges.subscribe(() => {
+      this.errorText.set(null)
+    })
+  }
 
   onSubmit(event: Event) {
     event.preventDefault()
