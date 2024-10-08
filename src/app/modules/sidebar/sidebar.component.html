@@ -1,1 +1,60 @@
-<p>sidebar works!</p>
+<div class="root">
+  <div class="container">
+      <div class="logo-container">
+        <img src="/assets/svg/logo.svg" alt="logo" class="logo">
+      </div>
+
+    <ul class="menu" >
+      @for (menuItem of menuItems; track $index) {
+        <li>
+          <button class="menu-item">
+            <svg [icon]="menuItem.icon"></svg>
+            <span>{{menuItem.label}}</span>
+          </button>
+        </li>
+      }
+    </ul>
+
+    <div class="subscribers">
+      <p class="subscribers-title">Подписчики</p>
+
+      <ul class="subscribers-list">
+        <li class="subscribers-item">
+          <a href="#">
+            <img src="/assets/img/user.png" alt="user">
+            Сара Коннор
+          </a>
+        </li>
+        <li class="subscribers-item">
+          <a href="#">
+            <img src="/assets/img/user.png" alt="user">
+            Сара Коннор
+          </a>
+        </li>
+        <li class="subscribers-item">
+          <a href="#">
+            <img src="/assets/img/user.png" alt="user">
+            Сара Коннор
+          </a>
+        </li>
+      </ul>
+
+      <button class="subscribers-all">
+        Все подписчики
+        <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.222657 8.44531L3.66797 5L0.222656 1.55469L1.27734 0.5L5.77734 5L1.27734 9.5L0.222657 8.44531Z" fill="#AE7AFF"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="profile">
+  <button class="profile-container">
+    <img src="/assets/img/user.png" alt="user">
+    <p>ryan.gosling</p>
+    <button>
+      <img src="/assets/svg/settings.svg" alt="settings">
+    </button>
+  </button>
+</div>

@@ -8,5 +8,25 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
-
+  protected menuItems: {
+    label: string,
+    icon: string,
+    link: string,
+  }[]= [
+    {
+      label: "Моя страница",
+      icon: 'home',
+      link: ''
+    },
+    {
+      label: "Чаты",
+      icon: 'chat',
+      link: 'chats'
+    },
+    {
+      label: "Поиск",
+      icon: 'search',
+      link: 'search'
+    }
+  ]
 }

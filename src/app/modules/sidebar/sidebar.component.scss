@@ -1,0 +1,114 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  padding: 20px 12px;
+  background-color: var(--dark-color);
+
+  .logo-container {
+    margin-bottom: 28px;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    gap: 8px;
+
+    .menu-item {
+      padding: 8px 0 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      a {
+        text-decoration: none;
+        color: var(--light-color)
+      }
+
+      :hover {
+        color: var(--primary-color)
+      }
+    }
+  }
+
+
+  .subscribers {
+    p {
+      margin-bottom: 20px;
+    }
+
+    .subscribers-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+
+      .subscribers-item {
+        padding: 12px 0 12px 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        a {
+          display: flex;
+          text-decoration: none;
+          gap: 12px;
+          color: var(--light-color);
+          align-items: center;
+        }
+        :hover {
+          opacity: 0.8;
+        }
+      }
+    }
+
+
+    .subscribers-all {
+      display: flex;
+      align-items: center;
+      background: none;
+      gap: 11px;
+      cursor: pointer;
+      color: #AE7AFF;
+      border: none;
+
+      :hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .profile {
+    background: var(--dark-active);
+    padding: 4px 16px;
+    .profile-container {
+      width: 100%;
+      border: none;
+      background: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: "JetBrains Mono", monospace;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--primary-color);
+
+      :hover {
+        opacity: .8;
+      }
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        img {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+}
