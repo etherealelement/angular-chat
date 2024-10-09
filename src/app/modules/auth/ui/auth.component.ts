@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../../../shared/ui-kit/button/button.component';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {AuthService} from '../services/auth.service';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-auth',
