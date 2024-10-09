@@ -1,1 +1,45 @@
-<p>sidebar works!</p>
+<div class="root">
+  <div class="container">
+      <div class="logo-container">
+        <img src="/assets/svg/logo.svg" alt="logo" class="logo">
+      </div>
+
+    <ul class="menu" >
+      @for (menuItem of menuItems; track $index) {
+        <li>
+          <button class="menu-item">
+            <svg [icon]="menuItem.icon"></svg>
+            <span>{{menuItem.label}}</span>
+           </button>
+        </li>
+      }
+    </ul>
+
+    <div class="subscribers">
+      <p class="subscribers-title">Подписчики</p>
+
+      <ul class="subscribers-list">
+        @for (profile of subscribers$ | async ; track profile.id) {
+          <app-user-sub [avatar]="profile.avatarUrl | imgUrl" [firstName]="profile.firstName" [lastName]="profile.lastName"></app-user-sub>
+        }
+      </ul>
+
+      <button  class="subscribers-all">
+        <a>
+          Все подписчики
+        </a>
+        <svg [icon]="'arrow'"></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="profile">
+  <button class="profile-container">
+    <img src="/assets/img/user.png" alt="user">
+    <p>ryan.gosling</p>
+    <button>
+      <img src="/assets/svg/settings.svg" alt="settings">
+    </button>
+  </button>
+</div>
