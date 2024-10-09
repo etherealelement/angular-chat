@@ -4,11 +4,18 @@ import { UserSubComponent } from '../../shared/ui/user-sub/user-sub.component';
 import { SidebarService } from './services/sidebar.service';
 import { CommonModule } from '@angular/common';
 import { ImgUrlPipe } from '../../shared/utils/validate-img-url/img-url.pipe';
+import { SpinnerComponent } from '../../shared/ui/spinner/spinner.component';
 
 @Component({
     selector: 'app-sidebar',
     standalone: true,
-    imports: [SvgIconComponent, UserSubComponent, CommonModule, ImgUrlPipe],
+    imports: [
+        SvgIconComponent,
+        UserSubComponent,
+        CommonModule,
+        ImgUrlPipe,
+        SpinnerComponent,
+    ],
     templateUrl: './sidebar.component.html',
     styleUrl: './sidebar.component.scss',
 })
@@ -36,23 +43,6 @@ export class SidebarComponent {
             label: 'Поиск',
             icon: 'search',
             link: 'search',
-        },
-    ];
-    protected usersList: {
-        avatar: string;
-        name: string;
-    }[] = [
-        {
-            avatar: '/assets/img/user.png',
-            name: 'John Doe',
-        },
-        {
-            avatar: '/assets/img/user.png',
-            name: 'John Doe',
-        },
-        {
-            avatar: '/assets/img/user.png',
-            name: 'John Doe',
         },
     ];
 }

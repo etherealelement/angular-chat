@@ -17,12 +17,16 @@
 
     <div class="subscribers">
       <p class="subscribers-title">Подписчики</p>
-
-      <ul class="subscribers-list">
-        @for (profile of subscribers$ | async ; track profile.id) {
-          <app-user-sub [avatar]="profile.avatarUrl | imgUrl" [firstName]="profile.firstName" [lastName]="profile.lastName"></app-user-sub>
-        }
-      </ul>
+      
+      @if(!(subscribers$ | async)) {
+        <app-spinner></app-spinner>
+      } @else {
+        <ul class="subscribers-list">
+          @for (profile of subscribers$ | async ; track profile.id) {
+            <app-user-sub [avatar]="profile.avatarUrl | imgUrl" [firstName]="profile.firstName" [lastName]="profile.lastName"></app-user-sub>
+          }
+        </ul>
+      }
 
       <button  class="subscribers-all">
         <a>
