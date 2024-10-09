@@ -86,6 +86,11 @@
       color: #AE7AFF;
       border: none;
 
+      svg {
+        width: 16px;
+        height: 10px;
+      }
+
       :hover {
         opacity: 0.8;
       }
