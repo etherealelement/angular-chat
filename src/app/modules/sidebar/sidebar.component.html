@@ -17,7 +17,7 @@
 
     <div class="subscribers">
       <p class="subscribers-title">Подписчики</p>
-      
+
       @if(!(subscribers$ | async)) {
         <app-spinner></app-spinner>
       } @else {
@@ -38,12 +38,16 @@
   </div>
 </div>
 
-<div class="profile">
-  <button class="profile-container">
-    <img src="/assets/img/user.png" alt="user">
-    <p>ryan.gosling</p>
-    <button>
-      <img src="/assets/svg/settings.svg" alt="settings">
+<footer class="profile">
+  @if(!(userService$ | async)) {
+    <app-spinner></app-spinner>
+  } @else {
+    <button class="profile-container">
+      <img [src]="profile()?.avatarUrl ? profile()?.avatarUrl : '/assets/img/avatar-placeholder.png'" alt="user">
+      <p>{{profile()?.username}}</p>
+      <a [routerLink]="['/settings']">
+        <svg [icon]="'settings'"></svg>
+      </a>
     </button>
-  </button>
-</div>
+  }
+</footer>
