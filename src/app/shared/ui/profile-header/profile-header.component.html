@@ -1,7 +1,9 @@
 <div class="root">
-  <svg [icon]="avatar"></svg>
+  <div class="avatar-box">
+    <svg [icon]="'avatar-placeholder'"></svg>
+  </div>
   <div class="container">
-    <p class="name">{{firstName}} {{lastName}}</p>
-    <p class="username">{{username}}</p>
+    <p class="name">{{profile.firstName}} {{profile.lastName}}</p>
+    <p class="username">{{profile.username}}</p>
   </div>
 </div>

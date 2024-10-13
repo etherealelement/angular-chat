@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
+import { Profile } from '../../../entities/me/interfaces/profile';
 
 @Component({
     selector: 'app-profile-header',
@@ -9,8 +10,5 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
     styleUrl: './profile-header.component.scss',
 })
 export class ProfileHeaderComponent {
-    @Input() avatar = '';
-    @Input() firstName = '';
-    @Input() lastName = '';
-    @Input() username = '';
+    @Input() profile!: Profile;
 }
