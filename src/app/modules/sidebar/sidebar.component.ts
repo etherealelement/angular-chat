@@ -5,7 +5,7 @@ import { SidebarService } from './services/sidebar.service';
 import { CommonModule } from '@angular/common';
 import { ImgUrlPipe } from '../../shared/utils/validate-img-url/img-url.pipe';
 import { SpinnerComponent } from '../../shared/ui/spinner/spinner.component';
-import { UserService } from '../../entities/me/services/me.service';
+import { UserService } from '../../entities/me/services/profile.service';
 import { Profile } from '../../entities/me/interfaces/profile';
 import { RouterLink } from '@angular/router';
 
