@@ -1,9 +1,7 @@
 <div class="root">
   <div class="subscribers">
     <div class="subscribers-head">
-      <h6 class="title">
-        Подписчики
-      </h6>
+      <app-heading headingType="h6" text="Подписчики"></app-heading>
       <span class="count">28</span>
     </div>
     <ul class="subscribers-list">
@@ -31,6 +29,18 @@
     </ul>
   </div>
 
-  <div class="skills"></div>
-  <div class="about"></div>
+  <div class="skills">
+    <app-heading headingType="h6" text="Навыки"></app-heading>
+    <ul class="skills-list">
+      <app-profile-tag tag="HTML"></app-profile-tag>
+      <app-profile-tag tag="HTML"></app-profile-tag>
+      <app-profile-tag tag="HTML"></app-profile-tag>
+    </ul>
+  </div>
+  <div class="about">
+    <app-heading headingType="h6" text="О себе"></app-heading>
+    <p class="text">
+      Список навыков, который мы обсудили выше, — основа резюме, но не единственная его часть. Также можно рассказать о себе в классическом смысле — этот раздел можно добавить в сопроводительное письмо.
+    </p>
+  </div>
 </div>
