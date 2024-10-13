@@ -1,18 +1,23 @@
 .root {
   display: flex;
   align-items: center;
-  gap: 24px;
+  justify-content: space-between;
 
-  .avatar-box {
+  .user-info {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 140px;
-    height: 140px;
+    gap: 24px;
+    .avatar-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 140px;
+      height: 140px;
 
-    svg {
-      width: 112px;
-      height: 112px;
+      svg {
+        width: 112px;
+        height: 112px;
+      }
     }
   }
 
@@ -34,6 +39,34 @@
       font-weight: 400;
       font-size: 14px;
       line-height: 21px;
+    }
+  }
+
+  .settings {
+    max-width: 340px;
+
+    a {
+      display: flex;
+      align-items: center;
+      color: var(--dark-color);
+      font-size: 14px;
+      line-height: 24px;
+      gap: 8px;
+      font-weight: 700;
+      border: 1px solid var(--dark-color);
+      background: var(--primary-color);
+      text-decoration: none;
+      padding: 10px 20px 10px 20px;
+
+      svg {
+        color: var(--dark-color);
+        width: 16px;
+        height: 16px;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 }

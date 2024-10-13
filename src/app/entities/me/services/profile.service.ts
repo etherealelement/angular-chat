@@ -12,4 +12,8 @@ export class UserService {
     getMe() {
         return this.httpClient.get<Profile>(this.baseUrl);
     }
+
+    getAccount(id: string) {
+        return this.httpClient.get<Profile>(`${this.baseUrl}/${id}`);
+    }
 }

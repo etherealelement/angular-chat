@@ -1,9 +1,18 @@
-<div class="root">
-  <div class="avatar-box">
-    <svg [icon]="'avatar-placeholder'"></svg>
+<header class="root">
+  <div class="user-info">
+    <div class="avatar-box">
+      <svg [icon]="'avatar-placeholder'"></svg>
+    </div>
+    <div class="container">
+      <p class="name">{{profile.firstName}} {{profile.lastName}}</p>
+      <p class="username">{{profile.username}}</p>
+    </div>
   </div>
-  <div class="container">
-    <p class="name">{{profile.firstName}} {{profile.lastName}}</p>
-    <p class="username">{{profile.username}}</p>
+
+  <div class="settings">
+    <a [routerLink]="['/settings']">
+      Редактировать
+    <svg [icon]="'settings'"></svg>
+    </a>
   </div>
-</div>
+</header>
