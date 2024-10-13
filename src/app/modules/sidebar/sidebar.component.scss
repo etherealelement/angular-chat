@@ -17,6 +17,7 @@
     gap: 8px;
 
     .menu-item {
+      text-decoration: none;
       cursor: pointer;
       border: none;
       background: none;
@@ -33,7 +34,8 @@
       font-family: "JetBrains Mono", monospace;
 
       &:hover,
-      &:focus-visible {
+      &:focus-visible,
+      &.active{
         background: var(--dark-hover-color);
         color: var(--primary-color)
       }

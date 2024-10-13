@@ -7,7 +7,7 @@ import { ImgUrlPipe } from '../../shared/utils/validate-img-url/img-url.pipe';
 import { SpinnerComponent } from '../../shared/ui/spinner/spinner.component';
 import { UserService } from '../../entities/me/services/profile.service';
 import { Profile } from '../../entities/me/interfaces/profile';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
     selector: 'app-sidebar',
@@ -19,6 +19,7 @@ import { RouterLink } from '@angular/router';
         ImgUrlPipe,
         SpinnerComponent,
         RouterLink,
+        RouterLinkActive,
     ],
     templateUrl: './sidebar.component.html',
     styleUrl: './sidebar.component.scss',
@@ -46,7 +47,7 @@ export class SidebarComponent implements OnInit {
         {
             label: 'Моя страница',
             icon: 'home',
-            link: '',
+            link: '/profile/me',
         },
         {
             label: 'Чаты',
