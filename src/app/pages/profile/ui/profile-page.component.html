@@ -1,0 +1,7 @@
+<div class="root">
+  @if ((profile$ | async)) {
+    <app-profile-header [profile]="(profile$ | async)!"></app-profile-header>
+  } @else {
+    <app-spinner></app-spinner>
+  }
+</div>

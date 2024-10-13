@@ -1,2 +1,2 @@
-export type ButtonProps = 'primary' | 'secondary';
+export type ButtonProps = 'primary' | 'secondary' | 'settings';
 export type ButtonSize = 'small' | 'medium' | 'large';
