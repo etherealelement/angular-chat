@@ -6,6 +6,7 @@ import { SpinnerComponent } from '../../../shared/ui/spinner/spinner.component';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { ButtonComponent } from '../../../shared/ui-kit/button/button.component';
+import {ProfileInfoComponent} from '../../../modules/profile-info/model/profile-info.component';
 
 @Component({
     selector: 'app-profile-page',
@@ -16,6 +17,7 @@ import { ButtonComponent } from '../../../shared/ui-kit/button/button.component'
         SpinnerComponent,
         ButtonComponent,
         RouterLink,
+        ProfileInfoComponent,
     ],
     templateUrl: '../ui/profile-page.component.html',
     styleUrl: '../ui/profile-page.component.scss',
