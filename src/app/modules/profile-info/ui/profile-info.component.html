@@ -1,46 +1,48 @@
-<div class="root">
-  <div class="subscribers">
-    <div class="subscribers-head">
-      <app-heading headingType="h6" text="Подписчики"></app-heading>
-      <span class="count">28</span>
+@if (profileInfo$ | async) {
+  <div class="root">
+    <div class="subscribers">
+      <div class="subscribers-head">
+        <app-heading headingType="h6" text="Подписчики"></app-heading>
+        <span class="count">{{(profileInfo$ | async)?.subscribersAmount}}</span>
+      </div>
+      <ul class="subscribers-list">
+        @for (sub of (subscriptions$ | async); track $index) {
+          <li class="subscribers-item">
+            <a [routerLink]="['/profile', sub.id]">
+              @if (sub.avatarUrl) {
+                <img [src]="sub.avatarUrl! | imgUrl" alt="alt">
+              } @else {
+                <img src="/assets/svg/avatar-placeholder.svg" alt="alt">
+              }
+            </a>
+          </li>
+        }
+        <a class="subscribers-btn" [routerLink]="['/search']">
+          <svg icon="plus"></svg>
+        </a>
+      </ul>
     </div>
-    <ul class="subscribers-list">
-      <li class="subscribers-item">
-        <img src="/assets/img/avatar-placeholder.png" alt="alt">
-      </li>
-      <li class="subscribers-item">
-        <img src="/assets/img/avatar-placeholder.png" alt="alt">
-      </li>
-      <li class="subscribers-item">
-        <img src="/assets/img/avatar-placeholder.png" alt="alt">
-      </li>
-      <li class="subscribers-item">
-        <img src="/assets/img/avatar-placeholder.png" alt="alt">
-      </li>
-      <li class="subscribers-item">
-        <img src="/assets/img/avatar-placeholder.png" alt="alt">
-      </li>
-      <li class="subscribers-item">
-        <img src="/assets/img/avatar-placeholder.png" alt="alt">
-      </li>
-      <button class="subscribers-btn">
-        <svg icon="plus"></svg>
-      </button>
-    </ul>
+
+    <div class="skills">
+      <app-heading headingType="h6" text="Навыки"></app-heading>
+        @if ((profileInfo$ | async)?.stack.length > 0) {
+          <ul class="skills-list">
+            @for (skill of (profileInfo$ | async)?.stack; track $index) {
+              <app-profile-tag tag="{{skill}}"></app-profile-tag>
+            }
+          </ul>
+        } @else {
+          <p>Нет навыков</p>
+        }
+    </div>
+    <div class="about">
+      <app-heading headingType="h6" text="О себе"></app-heading>
+      <p class="text">
+        Список навыков, который мы обсудили выше, — основа резюме, но не единственная его часть. Также можно рассказать о себе в классическом смысле — этот раздел можно добавить в сопроводительное письмо.
+      </p>
+    </div>
   </div>
 
-  <div class="skills">
-    <app-heading headingType="h6" text="Навыки"></app-heading>
-    <ul class="skills-list">
-      <app-profile-tag tag="HTML"></app-profile-tag>
-      <app-profile-tag tag="HTML"></app-profile-tag>
-      <app-profile-tag tag="HTML"></app-profile-tag>
-    </ul>
-  </div>
-  <div class="about">
-    <app-heading headingType="h6" text="О себе"></app-heading>
-    <p class="text">
-      Список навыков, который мы обсудили выше, — основа резюме, но не единственная его часть. Также можно рассказать о себе в классическом смысле — этот раздел можно добавить в сопроводительное письмо.
-    </p>
-  </div>
-</div>
+} @else {
+  <app-spinner></app-spinner>
+}
