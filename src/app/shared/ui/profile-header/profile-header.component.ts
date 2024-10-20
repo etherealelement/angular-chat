@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
-import { Profile } from '../../../entities/me/interfaces/profile';
+import { Profile } from '../../../entities/account/_domain/account';
 import { RouterLink } from '@angular/router';
 
 @Component({

@@ -1,0 +1,56 @@
+@if (profileInfo$ | async) {
+  <div class="root">
+    <div class="subscribers">
+      <div class="subscribers-head">
+        <app-heading headingType="h6" text="Подписчики"></app-heading>
+        <span class="count">{{(profileInfo$ | async)?.subscribersAmount}}</span>
+      </div>
+      <ul class="subscribers-list">
+        @if((subscriptions$ | async)!.length > 0) {
+          @for (sub of (subscriptions$ | async); track $index) {
+            <li class="subscribers-item">
+              <a [routerLink]="['/profile', sub.id]">
+                @if (sub.avatarUrl) {
+                  <img [src]="sub.avatarUrl! | imgUrl" alt="alt">
+                } @else {
+                  <img src="/assets/svg/avatar-placeholder.svg" alt="alt">
+                }
+              </a>
+            </li>
+          }
+        }@else{
+          <p>Подписчиков пока что нет :)</p>
+        }
+        <a class="subscribers-btn" [routerLink]="['/search']">
+          <svg icon="plus"></svg>
+        </a>
+      </ul>
+    </div>
+
+    <div class="skills">
+      <app-heading headingType="h6" text="Навыки"></app-heading>
+      <ul class="skills-list">
+        @if ((profileInfo$ | async)?.stack!.length > 0) {
+          @for (skill of (profileInfo$ | async)?.stack; track $index) {
+            <app-profile-tag tag="{{skill}}"></app-profile-tag>
+          }
+        }@else {
+          <p>Навыков пока что нет :)</p>
+        }
+      </ul>
+    </div>
+    <div class="about">
+      <app-heading headingType="h6" text="О себе"></app-heading>
+      <p class="text">
+        @if ((profileInfo$ | async)?.description) {
+          {{(profileInfo$ | async)?.description}}
+        } @else {
+          Нет описания
+        }
+      </p>
+    </div>
+  </div>
+
+} @else {
+  <app-spinner></app-spinner>
+}
