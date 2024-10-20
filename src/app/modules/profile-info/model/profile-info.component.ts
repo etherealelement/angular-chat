@@ -5,7 +5,6 @@ import { ProfileTagComponent } from '../../../shared/ui/profile-tag/profile-tag.
 import { SpinnerComponent } from '../../../shared/ui/spinner/spinner.component';
 import { AsyncPipe, JsonPipe } from '@angular/common';
 import { AccountService } from '../../../entities/account/_model/account.service';
-import { filter, map } from 'rxjs';
 import { ImgUrlPipe } from '../../../shared/utils/validate-img-url/img-url.pipe';
 import { RouterLink } from '@angular/router';
 
