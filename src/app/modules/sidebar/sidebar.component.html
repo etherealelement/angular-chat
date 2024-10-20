@@ -42,7 +42,7 @@
   @if(!(userService$ | async)) {
     <app-spinner></app-spinner>
   } @else {
-    <button class="profile-container">
+    <button class="profile-container"  routerLinkActive="active">
       <img [src]="profile()?.avatarUrl ? profile()?.avatarUrl : '/assets/img/avatar-placeholder.png'" alt="user">
       <p>{{profile()?.username}}</p>
       <a [routerLink]="['/settings']">

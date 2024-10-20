@@ -100,7 +100,6 @@
   }
 
   .profile {
-    background: var(--dark-active);
     padding: 4px 16px;
 
     .profile-container {
@@ -108,17 +107,14 @@
       border: none;
       background: inherit;
       font-size: 14px;
+      padding: 10px;
+      color: var(--light-color);
       font-weight: 500;
       cursor: pointer;
       font-family: "JetBrains Mono", monospace;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      color: var(--primary-color);
-
-      :hover {
-        opacity: .8;
-      }
 
       img {
         width: 32px;
@@ -130,12 +126,29 @@
         background: none;
         border: none;
         cursor: pointer;
+
         svg {
-          color: var(--primary-color);
+          color: var(--light-color);
           width: 14px;
           height: 14px;
         }
       }
     }
+
+    &:hover,
+    &:focus-visible,
+    &.active {
+      background: var(--dark-hover-color);
+      color: var(--primary-color);
+
+      .profile-container {
+        color: var(--primary-color);
+
+        a svg {
+          color: var(--primary-color);
+        }
+      }
+    }
   }
+
 }
