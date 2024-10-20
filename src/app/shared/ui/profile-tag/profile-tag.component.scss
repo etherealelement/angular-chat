@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border: 1px solid var(--light-color);
+  border-radius: 2px;
+  .tag {
+    font-weight: 700;
+    color: var(--light-color);
+  }
+}
