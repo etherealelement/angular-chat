@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Profile } from '../_domain/account';
+import { Profile } from '../_domain/profile';
 import { map } from 'rxjs';
 
 @Injectable({

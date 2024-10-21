@@ -1,6 +1,6 @@
 <div class="root">
   @if ((profile$ | async)) {
-    <app-profile-header [profile]="(profile$ | async)!"></app-profile-header>
+    <app-profile-header [isProfile]="true"></app-profile-header>
   } @else {
     <app-spinner></app-spinner>
   }

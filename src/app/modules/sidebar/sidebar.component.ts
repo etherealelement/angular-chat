@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { ImgUrlPipe } from '../../shared/utils/validate-img-url/img-url.pipe';
 import { SpinnerComponent } from '../../shared/ui/spinner/spinner.component';
 import { AccountService } from '../../entities/account/_model/account.service';
-import { Profile } from '../../entities/account/_domain/account';
+import { Profile } from '../../entities/account/_domain/profile';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
