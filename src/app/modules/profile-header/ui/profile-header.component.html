@@ -1,0 +1,20 @@
+<header class="root">
+  <div class="user-info">
+    <div class="avatar-box">
+      <svg [icon]="'avatar-placeholder'"></svg>
+    </div>
+    <div class="container">
+      <p class="name">{{(profile$ | async)?.firstName}} {{(profile$ | async)?.lastName}}</p>
+      <p class="username">{{(profile$ | async)?.username}}</p>
+    </div>
+  </div>
+
+  @if(isProfile) {
+    <div class="settings">
+      <a [routerLink]="['/settings']">
+        Редактировать
+        <svg [icon]="'settings'"></svg>
+      </a>
+    </div>
+  }
+</header>

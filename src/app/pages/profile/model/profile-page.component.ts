@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ProfileHeaderComponent } from '../../../shared/ui/profile-header/profile-header.component';
+import { ProfileHeaderComponent } from '../../../modules/profile-header/model/profile-header.component';
 import { AccountService } from '../../../entities/account/_model/account.service';
 import { AsyncPipe } from '@angular/common';
 import { SpinnerComponent } from '../../../shared/ui/spinner/spinner.component';

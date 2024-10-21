@@ -38,16 +38,16 @@
   </div>
 </div>
 
-<footer class="profile">
+<footer class="profile" routerLinkActive="active">
   @if(!(userService$ | async)) {
     <app-spinner></app-spinner>
   } @else {
-    <button class="profile-container">
+    <a class="profile-container" [routerLink]="['/settings']">
       <img [src]="profile()?.avatarUrl ? profile()?.avatarUrl : '/assets/img/avatar-placeholder.png'" alt="user">
       <p>{{profile()?.username}}</p>
-      <a [routerLink]="['/settings']">
+      <a>
         <svg [icon]="'settings'"></svg>
       </a>
-    </button>
+    </a>
   }
 </footer>
