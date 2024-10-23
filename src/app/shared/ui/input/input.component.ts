@@ -10,4 +10,5 @@ import { Component, Input } from '@angular/core';
 export class InputComponent {
     @Input() name = '';
     @Input() type = 'text';
+    @Input() isTextarea = false;
 }

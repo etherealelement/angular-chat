@@ -1,3 +1,11 @@
-<div class="root">
-  <app-input name="Имя" ></app-input>
-</div>
+<form class="root" [formGroup]="form">
+  <div class="container">
+    <div class="head">
+      <app-input name="Имя" type="text" formControlName="firstName"></app-input>
+      <app-input name="Фамилия" type="text" formControlName="lastName"></app-input>
+    </div>
+    <app-input name="Telegram username" type="text" formControlName="username"></app-input>
+    <app-input name="О себе" type="text" [isTextarea]="true"></app-input>
+
+  </div>
+</form>

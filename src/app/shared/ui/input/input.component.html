@@ -1,4 +1,8 @@
-<label class="container">
+<div class="container">
   {{name}}
-  <input  [type]="type" placeholder="Введите данные">
-</label>
+  @if(isTextarea) {
+    <textarea placeholder="Введите данные"></textarea>
+  }@else {
+    <input  [type]="type" placeholder="Введите данные">
+  }
+</div>

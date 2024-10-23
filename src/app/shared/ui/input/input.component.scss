@@ -18,6 +18,33 @@
     transition: color 0.3s ease;
   }
 
+  textarea {
+    background: transparent;
+    color: var(--light-color);
+    padding: 12px;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    font-family: "JetBrains Mono", monospace;
+    border-bottom: 2px solid var(--light-color);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    line-height: 1.5;
+    border-radius: 4px;
+
+    &:focus {
+      border-bottom: 2px solid var(--primary-color);
+      transform: scale(1.02);
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
+
   input {
     background: transparent;
     color: var(--light-color);
