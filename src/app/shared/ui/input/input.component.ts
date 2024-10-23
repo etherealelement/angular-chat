@@ -11,4 +11,5 @@ export class InputComponent {
     @Input() name = '';
     @Input() type = 'text';
     @Input() isTextarea = false;
+    @Input() formControlName = '';
 }

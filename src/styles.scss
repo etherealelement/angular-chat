@@ -13,8 +13,14 @@
   --dark-active: #161616;
   --dark-hover-color: #161616;
   --main-green: #98E9AB;
+  --main-red: #E99898;
 }
 
+
+button {
+  cursor: pointer;
+  font-family: "JetBrains Mono", monospace;
+}
 
 body {
   background: var(--dark-color);

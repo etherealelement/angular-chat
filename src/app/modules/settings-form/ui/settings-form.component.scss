@@ -7,10 +7,87 @@
     display: grid;
     grid-gap: 20px;
 
-    .head {
+    .form {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: 20px;
+    }
+    
+    .controllers {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+
+
+      .btn-left{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .delete {
+          display: flex;  // Используем flexbox
+          justify-content: center;  // Центрируем по горизонтали
+          align-items: center;  // Центрируем по вертикали
+          width: 44px;
+          height: 44px;
+          background: transparent;
+          border: 1px solid var(--light-color);
+          svg {
+            width: 16px;
+            height: 16px;
+            color: var(--main-red);
+            
+            use {
+              width: 16px;
+              height: 16px;
+            }
+          }
+        }
+
+        .logout {
+          display: flex;  // Используем flexbox
+          justify-content: center;  // Центрируем по горизонтали
+          align-items: center;  // Центрируем по вертикали
+          width: 44px;
+          height: 44px;
+          background: transparent;
+          border: 1px solid var(--light-color);
+          svg {
+            width: 16px;
+            height: 16px;
+            color: var(--light-color) !important;
+            
+            use {
+              width: 16px;
+              height: 16px;
+            }
+          }
+        }
+      }
+
+      .btn-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+
+        .cancel {
+          background: transparent;
+          padding: 10px 20px;
+          color: var(--light-color);
+          border: 1px solid var(--light-color);
+          font-weight: 700;
+        }
+
+        .save {
+          background: var(--primary-color);
+          padding: 10px 20px;
+          color: var(--dark-color);
+          border: 1px solid var(--dark-color);
+          font-weight: 700;
+        }
+      }
     }
   }
 }

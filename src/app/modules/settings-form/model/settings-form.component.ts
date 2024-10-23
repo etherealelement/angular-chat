@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { InputComponent } from '../../../shared/ui/input/input.component';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { SvgIconComponent } from '../../../shared/ui/svg-icon/svg-icon.component';
 
 @Component({
     selector: 'app-settings-form',
     standalone: true,
-    imports: [InputComponent, ReactiveFormsModule],
+    imports: [InputComponent, ReactiveFormsModule, SvgIconComponent],
     templateUrl: '../ui/settings-form.component.html',
     styleUrl: '../ui/settings-form.component.scss',
 })
