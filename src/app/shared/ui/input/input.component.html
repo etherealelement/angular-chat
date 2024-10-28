@@ -1,0 +1,8 @@
+<div class="container">
+  {{name}}
+  @if(isTextarea) {
+    <textarea placeholder="Введите данные" formControlName="formControlName"></textarea>
+  }@else {
+    <input  [type]="type" placeholder="Введите данные" formControlName="formControlName"/>
+  }
+</div>

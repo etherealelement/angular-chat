@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  label {
+    font-size: 16px;
+    color: var(--light-color);
+    transition: color 0.3s ease;
+  }
+
+  textarea {
+    background: transparent;
+    color: var(--light-color);
+    padding: 12px;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    font-family: "JetBrains Mono", monospace;
+    border-bottom: 2px solid var(--light-color);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    line-height: 1.5;
+    border-radius: 4px;
+    min-height: 64px;
+    resize: none;
+
+    &:focus {
+      border-bottom: 2px solid var(--primary-color);
+      transform: scale(1.02);
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
+
+  input {
+    background: transparent;
+    color: var(--light-color);
+    padding: 12px 0;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    font-family: "JetBrains Mono", monospace;
+    border-bottom: 2px solid var(--light-color);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+
+    &:focus {
+      border-bottom: 2px solid var(--primary-color);
+      transform: scale(1.02);
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
+}

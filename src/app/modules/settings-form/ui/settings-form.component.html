@@ -1,0 +1,28 @@
+<form class="root" [formGroup]="form">
+  <div class="container">
+    <div class="head">
+      <div class="form">
+        <app-input name="Имя" type="text" formControlName="firstName"></app-input>
+        <app-input name="Фамилия" type="text" formControlName="lastName"></app-input>
+      </div>
+      <app-input name="Telegram username" type="text" formControlName="username"></app-input>
+      <app-input name="О себе" type="text" [isTextarea]="true" formControlName="description"></app-input>
+      <app-input name="Навыки" type="text" ></app-input>
+      </div>
+
+      <div class="controllers">
+        <div class="btn-left">
+          <button class="delete">
+            <svg icon="trash"></svg>          
+          </button>
+          <button class="logout">
+          <svg icon="exit"></svg>
+          </button>
+        </div>
+        <div class="btn-right">
+          <button class="cancel">Отмена</button>
+          <button class="save">Сохранить</button>
+        </div>
+      </div>
+  </div>
+</form>
