@@ -14,6 +14,12 @@
       grid-gap: 20px;
     }
     
+    .head {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
     .controllers {
       display: flex;
       align-items: center;

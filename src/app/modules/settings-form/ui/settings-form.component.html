@@ -7,13 +7,16 @@
       </div>
       <app-input name="Telegram username" type="text" formControlName="username"></app-input>
       <app-input name="О себе" type="text" [isTextarea]="true" formControlName="description"></app-input>
+      <label #pew>
+        <app-upload-photo></app-upload-photo>
+      </label>
       <app-input name="Навыки" type="text" ></app-input>
       </div>
 
       <div class="controllers">
         <div class="btn-left">
           <button class="delete">
-            <svg icon="trash"></svg>          
+            <svg icon="trash"></svg>
           </button>
           <button class="logout">
           <svg icon="exit"></svg>
